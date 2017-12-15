@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="als">
+    <output-path>$PROJECT_DIR$/out/artifacts/als</output-path>
+    <root id="archive" name="als.jar">
+      <element id="module-output" name="learn-spring-building-java-project-with-maven" />
+    </root>
+  </artifact>
+</component>
