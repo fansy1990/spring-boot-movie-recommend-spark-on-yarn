@@ -34,6 +34,7 @@ import spring.config.HadoopConfigUtils;
 import spring.datastructure.FixSizePriorityQueue;
 import spring.model.MIdRated;
 import spring.model.Movie;
+import util.SpringApplicationContextHolder;
 
 @Controller
 public class Utils {

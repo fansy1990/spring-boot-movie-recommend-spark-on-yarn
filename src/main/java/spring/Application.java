@@ -1,11 +1,15 @@
 package spring;
 
+import config.ProjectConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import spring.init.InitListener;
+import util.PropertiesUtil;
+import util.SpringApplicationContextHolder;
 
 import java.util.Arrays;
 
@@ -15,10 +19,21 @@ import java.util.Arrays;
 @SpringBootApplication
 public class Application {
 
+    private static Boolean springInitInitListener = true;
+
+    static{
+        springInitInitListener = Boolean.parseBoolean(PropertiesUtil.getValue("config/project.properties","spring.init.InitListener"));
+    }
+
     public static void main(String[] args) {
-//        SpringApplication.run(Application.class, args);
+
+        //        SpringApplication.run(Application.class, args);
         SpringApplication springApplication =new SpringApplication(Application.class);
-        springApplication.addListeners(new InitListener());
+
+        if(springInitInitListener) {
+            System.out.println("adding listeren spring.init.InitListener...");
+            springApplication.addListeners(new InitListener());
+        }
         springApplication.run(args);
     }
 

@@ -8,9 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import scala.tools.cmd.gen.AnyVals;
 import spring.config.HadoopConfig;
-import spring.util.SpringApplicationContextHolder;
+import util.SpringApplicationContextHolder;
 import spring.util.Utils;
 
 public class MonitorThread implements Runnable {
