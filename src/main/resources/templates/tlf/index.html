@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Test Thymeleaf</title>
+</head>
+<body>
+<div>
+hello :<p th:text="${user.isAdmin()} ? 'Administrator' : (${user.type} ?: 'Unknown')" >user</p>
+    <p th:text="${#calendars.format(today,'yyyy-MM-dd')}">2017-12-20</p>
+</div>
+</body>
+</html>
